@@ -1,3 +1,8 @@
+<?php
+include("Database/PDO-Connection.php");
+?>
+
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
