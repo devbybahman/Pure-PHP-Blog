@@ -27,7 +27,7 @@
             <div class="mt-4">
                 <ul class="list-unstyled">
                     <li class="sidebar-item active">
-                        <a class="sidebar-link" href="./index.html">
+                        <a class="sidebar-link" href="index.php">
                             <i class="me-2 bi bi-grid-fill"></i>
                             <span>داشبورد</span>
                         </a>
