@@ -42,7 +42,7 @@
                     </svg>
                 </button>
                 <button id="switchTheme"></button>
-                <a class="navbar-brand text-white fw-bold fs-5" href="/index.html"><img src="https://codeyad.com/assets/images/logo.png?v=LeGU9ZpNcH1zdFN4EVqXRwoS_Iaehq3X46AqXt2uWPk" alt="Codeyad"></a>
+                <a class="navbar-brand text-white fw-bold fs-5" href="/index.php"><img src="https://codeyad.com/assets/images/logo.png?v=LeGU9ZpNcH1zdFN4EVqXRwoS_Iaehq3X46AqXt2uWPk" alt="Codeyad"></a>
             </div>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
@@ -53,27 +53,27 @@
             <div class="collapse navbar-collapse right-nav justify-content-start" id="navbar">
                 <ul class="navbar-nav nav-left">
                     <li class="nav-item me-0">
-                        <a class="nav-link mt-3 mt-lg-0" href="/index.html">
+                        <a class="nav-link mt-3 mt-lg-0" href="/index.php">
                             <i class="fa fa-home" aria-hidden="true"></i>
                             <span>خانه</span>
                         </a>
                     </li>
                     <li class="nav-item me-0">
-                        <a class="nav-link mt-3 mt-lg-0" href="/posts.html">
+                        <a class="nav-link mt-3 mt-lg-0" href="/posts.php">
                             <i class="fas fa-list"></i>
                             <span>پست ها</span>
                         </a>
                     </li>
                     
                     <li class="nav-item me-0">
-                        <a class="nav-link mt-3 mt-lg-0" href="/login.html">
+                        <a class="nav-link mt-3 mt-lg-0" href="/login.php">
                             <i class="fa fa-sign-in ms-1"></i>
                             <span>ورود</span>
                         </a>
                     </li>
                     
                     <li class="nav-item me-0">
-                        <a class="nav-link mt-3 mt-lg-0" href="/register.html">
+                        <a class="nav-link mt-3 mt-lg-0" href="/register.php">
                             <i class="fa fa-user-plus ms-1"></i>
                             <span>عضویت</span>
                         </a>

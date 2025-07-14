@@ -39,7 +39,7 @@
                 </div>
 
                 <p class="text">
-                    حساب کاربری ندارید ؟ <a href="/register.html" class="text-primary">یکی بسازید</a>
+                    حساب کاربری ندارید ؟ <a href="/register.php" class="text-primary">یکی بسازید</a>
                 </p>
             </form>
         </div>

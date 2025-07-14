@@ -48,7 +48,7 @@
                 </div>
         
                 <p class="text">
-                    قبلا ثبت نام کرده اید ؟ <a href="/login.html" class="text-primary">ورود</a>
+                    قبلا ثبت نام کرده اید ؟ <a href="/login.php" class="text-primary">ورود</a>
                 </p>
             </form>
         </div>
