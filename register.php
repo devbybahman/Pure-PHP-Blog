@@ -31,6 +31,7 @@ if (isset($_POST['sub'])) {
             }
         }
     } else {
+
         $error = "لطفاً تمام فیلدها را پر کنید.";
     }
 }
@@ -63,7 +64,13 @@ if (isset($_POST['sub'])) {
     <div id="overlay"></div>
     <div class="form-container">
         <form action="#" method="post">
-            <span class="text-bg-danger"><?php $error ?></span>
+            <section class="title" style="color: red !important; font-size: 15px!important;">
+                <?php
+                if ($error!=="") {
+                    echo $error;
+                }
+                ?>
+            </section>
             <h1 class="title">ثبت نام در وبلاگ</h1>
             <div class="mt-3 position-relative">
                 <input type="" name="username" class="field" placeholder="نام ...">
