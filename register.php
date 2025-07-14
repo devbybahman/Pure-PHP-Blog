@@ -14,24 +14,32 @@ if (isset($_POST['sub'])) {
         } elseif (strlen($_POST['password']) < 5) {
             $error = "رمز عبور باید بیشتر از 5 کاراکتر باشد";
         } else {
-            // رمزها درست هستند و طول مناسبه، حالا ذخیره کن
-            $username = $_POST['username'];
-            $email = $_POST['email'];
-            $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+            // بررسی وجود ایمیل تکراری
+            $stmt = $connection->prepare("SELECT * FROM users WHERE email=?");
+            $stmt->execute([$_POST['email']]);
+            $user = $stmt->fetch();
 
-            $result = $connection->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
-            $result->bindValue(1, $username);
-            $result->bindValue(2, $email);
-            $result->bindValue(3, $password);
-
-            if ($result->execute()) {
-                echo "ثبت‌نام با موفقیت انجام شد.";
+            if ($user) {
+                $error = "کاربری با این ایمیل قبلاً ثبت‌نام کرده است.";
             } else {
-                $error = "خطا در ثبت اطلاعات.";
+                // اطلاعات را ذخیره کن
+                $username = $_POST['username'];
+                $email = $_POST['email'];
+                $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+
+                $result = $connection->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
+                $result->bindValue(1, $username);
+                $result->bindValue(2, $email);
+                $result->bindValue(3, $password);
+
+                if ($result->execute()) {
+                    echo "ثبت‌نام با موفقیت انجام شد.";
+                } else {
+                    $error = "خطا در ثبت اطلاعات.";
+                }
             }
         }
     } else {
-
         $error = "لطفاً تمام فیلدها را پر کنید.";
     }
 }
@@ -66,7 +74,7 @@ if (isset($_POST['sub'])) {
         <form action="#" method="post">
             <section class="title" style="color: red !important; font-size: 15px!important;">
                 <?php
-                if ($error!=="") {
+                if ($error !== "") {
                     echo $error;
                 }
                 ?>
