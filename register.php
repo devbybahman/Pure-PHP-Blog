@@ -25,7 +25,7 @@ if (isset($_POST['sub'])) {
                 // اطلاعات را ذخیره کن
                 $username = $_POST['username'];
                 $email = $_POST['email'];
-                $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
+                $password = $_POST['password'];
 
                 $result = $connection->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
                 $result->bindValue(1, $username);
