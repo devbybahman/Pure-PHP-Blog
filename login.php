@@ -19,7 +19,7 @@ isset($_POST['password']) && $_POST['password'] !== ''
         $result->execute();
         if ($result->rowCount() >= 1) {
             $_SESSION['user'] = $_POST['email'];
-            header('Location: panel/index.php');
+            header('Location:../PANEL/userpanel.php');
         }
         else{
             $error="ایمیل یا رمز عبور اشتباه است";
