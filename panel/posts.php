@@ -1,13 +1,14 @@
 <?php
 
 session_start();
-include "../database/pdo_connection.php";
+include "../Database/PDO-Connection.php";
+
+$select=$connection->prepare("SELECT * FROM posts");
+$select->execute();
+$posts=$select->fetchAll(PDO::FETCH_ASSOC);
 
 
-if(!isset($_SESSION['user'])){
-  header("location:../login.php");
-  
-}
+
 
 
 ?>
@@ -169,13 +170,23 @@ if(!isset($_SESSION['user'])){
                     <th scope="col">عملیات</th>
                   </tr>
                 </thead>
-                
+                <?php $counter=1;?>
+                <?php foreach ($posts as $post){?>
                 <tbody>
-                 
-                  </tr>
 
+                  <tr scope="row">
+                      <td><?= $counter ?></td>
+                      <td><?= $post['title'] ?></td>
+                      <td><?= $post['date'] ?></td>
+                      <td><img style="max-height:80px" src="<?= $post['image'] ?>" alt=""></td>
+                      <td><?= $post['author'] ?></td>
+                      <td>
+                          <a href="#" class="btn btn-warning">ویرایش</a>
+                          <a href="#" class="btn btn-danger">حذف</a>
+                      </td>
+                  </tr>
                 </tbody>
-               
+                  <?php $counter+=1;} ?>
                 
                 
               </table>

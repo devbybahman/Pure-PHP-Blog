@@ -83,7 +83,7 @@ if (isset($_POST['sub'])){
                   <a href="addpost.php"> افزودن مقاله </a>
                 </li>
                 <li class="submenu-item">
-                  <a href="#"> مقاله ها</a>
+                  <a href="posts.php"> مقاله ها</a>
                 </li>
               </ul>
             </li>
