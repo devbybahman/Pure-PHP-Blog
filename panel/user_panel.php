@@ -1,7 +1,7 @@
 ﻿<?php
 session_start();
 include("../Database/PDO-Connection.php");
-if (!isset($_SESSION['user'])){
+if (isset($_SESSION['user'])){
     header('Location:../login.php');
     exit();
 
@@ -39,7 +39,7 @@ if (!isset($_SESSION['user'])){
         <div class="mt-4">
             <ul class="list-unstyled">
                 <li class="sidebar-item active">
-                    <a class="sidebar-link" href="index.php">
+                    <a class="sidebar-link" href="user_panel.php">
                         <i class="me-2 bi bi-grid-fill"></i>
                         <span>داشبورد</span>
                     </a>
@@ -48,7 +48,7 @@ if (!isset($_SESSION['user'])){
                 <li x-data="dropdown" class="sidebar-item">
                     <div @click="toggle" class="sidebar-link">
                         <i class="me-2 bi bi-shop"></i>
-                        <span>فروشگاه</span>
+                        <a href="/panel/addpost.php"> <span>فروشگاه</span></a>
                         <i class="ms-auto bi bi-chevron-down"></i>
                     </div>
                     <ul x-show="open" x-transition class="submenu">
@@ -138,7 +138,7 @@ if (!isset($_SESSION['user'])){
                 <li  x-data="dropdown" class="sidebar-item">
                     <div  @click="toggle" class="sidebar-link">
                         <i class="me-2 bi bi-power"></i>
-                        <a href="../logout.php"> <span> خروج</span></a>
+                        <span>  <a class="text-decoration-none text-dark" href="../logout.php">خروج</a></span>
                         <i class="ms-auto bi "></i>
                     </div>
                     <ul x-show="open" x-transition class="submenu">
