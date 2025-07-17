@@ -1,5 +1,22 @@
 <?php
+include '../jdf.php';
+session_start();
+include '../Database/PDO-Connection.php';
+if (isset($_POST['sub'])){
+    $title = $_POST['title'];
+    $description = $_POST['description'];
+    $author = $_POST['author'];
+    $image = $_POST['image'];
+    $date = jdate("Y/m/d");
+    $r=$connection->prepare("INSERT INTO posts SET title=?, description=?, author=?, image=?, date=?");
+    $r->bindValue(1,$title);
+    $r->bindValue(2,$description);
+    $r->bindValue(3,$author);
+    $r->bindValue(4,$image);
+    $r->bindValue(5,$date);
+    $r->execute();
 
+}
 
 
 
@@ -66,7 +83,7 @@
                   <a href="addpost.php"> افزودن مقاله </a>
                 </li>
                 <li class="submenu-item">
-                  <a href="#">ویرایش مقاله ها</a>
+                  <a href="#"> مقاله ها</a>
                 </li>
               </ul>
             </li>
@@ -161,25 +178,26 @@
               <i class="bi bi-plus-circle"></i>
               <span>افزودن پست</span>
             </h1>
-            <form action="#" class="mt-4">
+            <form action="#" class="mt-4" method="post">
               <div class="row">
                 <div class="col-md-6">
                   <label for="name" class="text-gray-600 fw-bold"
                     >نام پست</label
                   >
-                  <input id="name" type="text" class="form-control mt-2" />
+                  <input id="name" name="title" type="text" class="form-control mt-2" />
                 </div>
                 <div class="col-md-6">
                   <label for="name" class="text-gray-600 fw-bold"
                     > لینک عکس</label
                   >
-                  <input id="name" type="text" class="form-control mt-2" />
+                  <input name="image" id="name" type="text" class="form-control mt-2" />
                 </div>
               </div>
 
               <div class="mt-4">
                 <label for="text" class="text-gray-600 fw-bold">متن پست</label>
                 <textarea
+                        name="description"
                   id="text"
                   class="form-control mt-2"
                   cols="30"
@@ -192,20 +210,16 @@
                   <label for="category" class="text-gray-600 fw-bold"
                     > نویسنده</label
                   >
-                  <select class="form-select mt-2" id="category">
-                    <option value="">دسته بندی 1</option>
-                    <option value="">دسته بندی 2</option>
-                    <option value="">دسته بندی 3</option>
-                    <option value="">دسته بندی 4</option>
-                    <option value="">دسته بندی 5</option>
-                    <option value="">دسته بندی 6</option>
+                  <select class="form-select mt-2" name="author" id="category">
+                    <option value="1">بهمن</option>
+
                   </select>
                 </div>
                
               </div>
 
               <div class="d-flex justify-content-end mt-5">
-                <button type="submit" class="btn btn-primary btn-lg me-3 fs-6">
+                <button type="submit" name="sub" class="btn btn-primary btn-lg me-3 fs-6">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
