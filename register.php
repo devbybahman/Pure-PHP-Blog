@@ -34,6 +34,8 @@ if (isset($_POST['sub'])) {
 
                 if ($result->execute()) {
                     echo "ثبت‌نام با موفقیت انجام شد.";
+                    $_SESSION['user']=$_POST['email'];
+                    header('Location: /panel/user_panel.php');
                 } else {
                     $error = "خطا در ثبت اطلاعات.";
                 }

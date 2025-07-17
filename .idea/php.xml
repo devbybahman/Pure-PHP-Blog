@@ -12,10 +12,10 @@
   </component>
   <component name="PhpCodeSniffer">
     <phpcs_settings>
-      <phpcs_by_interpreter asDefaultInterpreter="true" interpreter_id="c9dd21a3-5079-478d-acd5-7fb7c4f850b7" timeout="30000" />
+      <phpcs_by_interpreter interpreter_id="c9dd21a3-5079-478d-acd5-7fb7c4f850b7" timeout="30000" />
     </phpcs_settings>
   </component>
-  <component name="PhpProjectSharedConfiguration" php_language_level="8.4" />
+  <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
   <component name="PhpStan">
     <PhpStan_settings>
       <phpstan_by_interpreter asDefaultInterpreter="true" interpreter_id="c9dd21a3-5079-478d-acd5-7fb7c4f850b7" timeout="60000" />

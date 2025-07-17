@@ -1,9 +1,6 @@
 <?php
 session_start();
 include("Database/PDO-Connection.php");
-if (isset($_SESSION['user'])) {
-    unset($_SESSION['user']);
-}
 $error="";
 if (
 isset($_POST['email']) && $_POST['email'] !== '' &&
@@ -19,7 +16,7 @@ isset($_POST['password']) && $_POST['password'] !== ''
         $result->execute();
         if ($result->rowCount() >= 1) {
             $_SESSION['user'] = $_POST['email'];
-            header('Location:../PANEL/userpanel.php');
+            header('Location: ../panel/user_panel.php');
         }
         else{
             $error="ایمیل یا رمز عبور اشتباه است";
@@ -45,9 +42,9 @@ isset($_POST['password']) && $_POST['password'] !== ''
     <!-- Vazir Font -->
     <link rel="stylesheet" href="fonts/vazir.css">
     <!-- Fontawsome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"-->
+<!--          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="-->
+<!--          crossorigin="anonymous" referrerpolicy="no-referrer"/>-->
     <title>ورود به حساب کاربری</title>
 </head>
 <body>

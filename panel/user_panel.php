@@ -1,7 +1,7 @@
 ﻿<?php
 session_start();
 include("../Database/PDO-Connection.php");
-if (!isset($_SESSION['email'])){
+if (!isset($_SESSION['user'])){
     header('Location:../login.php');
     exit();
 
@@ -23,7 +23,7 @@ if (!isset($_SESSION['email'])){
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="css/main.css">
 
     <title>codeyad blog</title>
 </head>
