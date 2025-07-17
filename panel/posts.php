@@ -182,7 +182,7 @@ $posts=$select->fetchAll(PDO::FETCH_ASSOC);
                       <td><?= $post['author'] ?></td>
                       <td>
                           <a href="#" class="btn btn-warning">ویرایش</a>
-                          <a href="#" class="btn btn-danger">حذف</a>
+                          <a href="Delete.php?id=<?=$post['id'] ?>" class="btn btn-danger">حذف</a>
                       </td>
                   </tr>
                 </tbody>
