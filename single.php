@@ -60,7 +60,7 @@ $post=$selectposts->fetch(pdo::FETCH_ASSOC);
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
                 <i class="fas fa-bars fs-3"></i>
             </button>
-            
+
 
             <div class="collapse navbar-collapse right-nav justify-content-start" id="navbar">
                 <ul class="navbar-nav nav-left">
@@ -76,14 +76,14 @@ $post=$selectposts->fetch(pdo::FETCH_ASSOC);
                             <span>پست ها</span>
                         </a>
                     </li>
-                    
+
                     <li class="nav-item me-0">
                         <a class="nav-link mt-3 mt-lg-0" href="/login.php">
                             <i class="fa fa-sign-in ms-1"></i>
                             <span>ورود</span>
                         </a>
                     </li>
-                    
+
                     <li class="nav-item me-0">
                         <a class="nav-link mt-3 mt-lg-0" href="/register.php">
                             <i class="fa fa-user-plus ms-1"></i>
@@ -93,7 +93,7 @@ $post=$selectposts->fetch(pdo::FETCH_ASSOC);
                 </ul>
             </div>
 
-            
+
         </div>
     </nav>
 
@@ -108,12 +108,9 @@ $post=$selectposts->fetch(pdo::FETCH_ASSOC);
                 <div class="img w-100">
                     <img src="<?=$post['image'] ?>" alt="Image" class="w-100 rounded">
                 </div>
-
-                <p class="desc">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده</p>
-                <p class="desc">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده</p>
-                <p class="desc">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده</p>
-                <p class="desc">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده</p>
-                <p class="desc">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد کتابهای زیادی در شصت و سه درصد گذشته حال و آینده</p>
+                <p class="desc">
+                    <?=$post['description'] ?>
+                </p>
             </div>
         </div>
     </main>
@@ -130,7 +127,7 @@ $post=$selectposts->fetch(pdo::FETCH_ASSOC);
         </div>
     </footer>
 
-    
+
 
     <script src="js/bootstrap.bundle.js"></script>
     <script src="js/scrollToUp.js"></script>
