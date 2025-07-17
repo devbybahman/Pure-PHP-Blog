@@ -181,7 +181,7 @@ $posts=$select->fetchAll(PDO::FETCH_ASSOC);
                       <td><img style="max-height:80px" src="<?= $post['image'] ?>" alt=""></td>
                       <td><?= $post['author'] ?></td>
                       <td>
-                          <a href="#" class="btn btn-warning">ویرایش</a>
+                          <a href="Edit.php?id=<?=$post['id'] ?>" class="btn btn-warning">ویرایش</a>
                           <a href="Delete.php?id=<?=$post['id'] ?>" class="btn btn-danger">حذف</a>
                       </td>
                   </tr>

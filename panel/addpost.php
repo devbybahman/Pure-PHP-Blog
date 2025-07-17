@@ -1,6 +1,5 @@
 <?php
 include '../jdf.php';
-session_start();
 include '../Database/PDO-Connection.php';
 if (isset($_POST['sub'])){
     $title = $_POST['title'];
@@ -15,8 +14,10 @@ if (isset($_POST['sub'])){
     $r->bindValue(4,$image);
     $r->bindValue(5,$date);
     $r->execute();
+    header("location:posts.php");
 
 }
+
 
 
 

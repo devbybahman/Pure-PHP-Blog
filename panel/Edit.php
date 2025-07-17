@@ -1,23 +1,26 @@
 ﻿<?php
 include '../jdf.php';
-session_start();
 include '../Database/PDO-Connection.php';
+$id = $_GET['id'];
+$post=$connection->prepare("SELECT * FROM posts WHERE id=?");
+$post->bindValue(1,$id);
+$post->execute();
+$currentpost=$post->fetch(PDO::FETCH_ASSOC);
 if (isset($_POST['sub'])){
     $title = $_POST['title'];
     $description = $_POST['description'];
     $author = $_POST['author'];
     $image = $_POST['image'];
     $date = jdate("Y/m/d");
-    $r=$connection->prepare("INSERT INTO posts SET title=?, description=?, author=?, image=?, date=?");
+    $r=$connection->prepare("UPDATE posts SET title=?, description=?, author=?, image=?, date=?");
     $r->bindValue(1,$title);
     $r->bindValue(2,$description);
     $r->bindValue(3,$author);
     $r->bindValue(4,$image);
     $r->bindValue(5,$date);
     $r->execute();
-
+    header("location:posts.php");
 }
-
 
 
 ?>
@@ -36,7 +39,7 @@ if (isset($_POST['sub'])){
         href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css"
     />
     <link rel="stylesheet" href="css/panel.css" />
-    <title>افزودن پست جدید</title>
+    <title>ویرایش پست جدید</title>
 </head>
 <body>
 <section x-data="toggleSidebar" class="">
@@ -184,25 +187,26 @@ if (isset($_POST['sub'])){
                             <label for="name" class="text-gray-600 fw-bold"
                             >نام پست</label
                             >
-                            <input id="name" name="title" type="text" class="form-control mt-2" />
+                            <input value="<?= $currentpost['title']?>" id="name" name="title" type="text" class="form-control mt-2" />
                         </div>
                         <div class="col-md-6">
                             <label for="name" class="text-gray-600 fw-bold"
                             > لینک عکس</label
                             >
-                            <input name="image" id="name" type="text" class="form-control mt-2" />
+                            <input value="<?= $currentpost['image']?>"  name="image" id="name" type="text" class="form-control mt-2" />
                         </div>
                     </div>
 
                     <div class="mt-4">
                         <label for="text" class="text-gray-600 fw-bold">متن پست</label>
                         <textarea
+
                             name="description"
                             id="text"
                             class="form-control mt-2"
                             cols="30"
                             rows="10"
-                        ></textarea>
+                        >  value="<?= $currentpost['description']?>"</textarea>
                     </div>
 
                     <div class="row mt-4">
