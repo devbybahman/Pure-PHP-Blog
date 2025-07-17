@@ -156,7 +156,7 @@ $posts=$select->fetchAll(PDO::FETCH_ASSOC);
       <div class="container ">
         <div class="card card-primary bg-light shadow p-4 mt-5 ">
           <h6 class="text-gray h6 fw-bold">
-            <i class="bi bi-plus-circle"></i>
+              <a href="addpost.php">   <i class="bi bi-plus-circle" style="font-size: 30px"></i></a>
 
            
               <table class="table table-striped ">

@@ -12,12 +12,13 @@ if (isset($_POST['sub'])){
     $author = $_POST['author'];
     $image = $_POST['image'];
     $date = jdate("Y/m/d");
-    $r=$connection->prepare("UPDATE posts SET title=?, description=?, author=?, image=?, date=?");
+    $r=$connection->prepare("UPDATE posts SET title=?, description=?, author=?, image=?, date=? WHERE id=?");
     $r->bindValue(1,$title);
     $r->bindValue(2,$description);
     $r->bindValue(3,$author);
     $r->bindValue(4,$image);
     $r->bindValue(5,$date);
+    $r->bindValue(6,$id);
     $r->execute();
     header("location:posts.php");
 }
@@ -200,13 +201,12 @@ if (isset($_POST['sub'])){
                     <div class="mt-4">
                         <label for="text" class="text-gray-600 fw-bold">متن پست</label>
                         <textarea
-
                             name="description"
                             id="text"
                             class="form-control mt-2"
                             cols="30"
                             rows="10"
-                        >  value="<?= $currentpost['description']?>"</textarea>
+                        ><?= $currentpost['description']?></textarea>
                     </div>
 
                     <div class="row mt-4">
@@ -223,7 +223,7 @@ if (isset($_POST['sub'])){
                     </div>
 
                     <div class="d-flex justify-content-end mt-5">
-                        <button type="submit" name="sub" class="btn btn-primary btn-lg me-3 fs-6">
+                        <button type="submit" name="sub" class="btn btn-warning btn-lg me-3 fs-6">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 width="16"
@@ -236,7 +236,7 @@ if (isset($_POST['sub'])){
                                     d="M15.854.146a.5.5 0 0 1 .11.54l-5.819 14.547a.75.75 0 0 1-1.329.124l-3.178-4.995L.643 7.184a.75.75 0 0 1 .124-1.33L15.314.037a.5.5 0 0 1 .54.11ZM6.636 10.07l2.761 4.338L14.13 2.576 6.636 10.07Zm6.787-8.201L1.591 6.602l4.339 2.76 7.494-7.493Z"
                                 />
                             </svg>
-                            <span>ارسال</span>
+                            <span>ویرایش</span>
                         </button>
 
                     </div>
