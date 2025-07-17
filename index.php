@@ -135,7 +135,7 @@ function limit_words($string)
             <div id="posts" class="mb-5 col-lg-9">
                 <h4 class="posts__title">پست ها</h4>
                 <div class="row">
-                    <?php foreach ($posts as $post) {?>
+                    <?php foreach ($posts as $post):?>
 
                     <div class="col-md-6 col-lg-4 mt-3">
 
@@ -153,11 +153,11 @@ function limit_words($string)
                                 <?php echo limit_words($post['description']) ?>
                             </p>
 
-                            <a href="single.php?id=$post['id']" class="post__link">مشاهده پست</a>
+                            <a  href="single.php?id=<?=$post['id'] ?>" class="post__link">مشاهده پست</a>
                         </div>
 
                     </div>
-                        <?php ;}?>
+                        <?php endforeach;?>
 
 
 
