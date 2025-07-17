@@ -6,7 +6,9 @@ include "../Database/PDO-Connection.php";
 $select=$connection->prepare("SELECT * FROM posts");
 $select->execute();
 $posts=$select->fetchAll(PDO::FETCH_ASSOC);
-
+$select=$connection->prepare("SELECT * FROM autors");
+$select->execute();
+$authors=$select->fetchAll(PDO::FETCH_ASSOC);
 
 
 
@@ -179,7 +181,13 @@ $posts=$select->fetchAll(PDO::FETCH_ASSOC);
                       <td><?= $post['title'] ?></td>
                       <td><?= $post['date'] ?></td>
                       <td><img style="max-height:80px" src="<?= $post['image'] ?>" alt=""></td>
-                      <td><?= $post['author'] ?></td>
+                      <td><?php
+                          foreach ($authors as $authorss){
+                              if ($post['author']==$authorss['id']){
+                                  echo $authorss['username'];
+                              }
+                          }
+                          ?></td>
                       <td>
                           <a href="Edit.php?id=<?=$post['id'] ?>" class="btn btn-warning">ویرایش</a>
                           <a href="Delete.php?id=<?=$post['id'] ?>" class="btn btn-danger">حذف</a>

@@ -1,6 +1,9 @@
 ﻿<?php
 include '../jdf.php';
 include '../Database/PDO-Connection.php';
+$select=$connection->prepare("SELECT * FROM autors");
+$select->execute();
+$authors=$select->fetchAll(PDO::FETCH_ASSOC);
 $id = $_GET['id'];
 $post=$connection->prepare("SELECT * FROM posts WHERE id=?");
 $post->bindValue(1,$id);
@@ -215,7 +218,13 @@ if (isset($_POST['sub'])){
                             > نویسنده</label
                             >
                             <select class="form-select mt-2" name="author" id="category">
-                                <option value="1">بهمن</option>
+
+                                <?php
+                                foreach ($authors as $authorss):?>
+                                    <option value="<?=$authorss['id']?>"><?=$authorss['username']?></option>
+
+
+                                <?php endforeach;?>
 
                             </select>
                         </div>

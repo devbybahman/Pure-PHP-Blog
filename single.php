@@ -1,6 +1,9 @@
 <?php
 require "Database/PDO-Connection.php";
 $id=$_GET['id'];
+$select=$connection->prepare("SELECT * FROM autors");
+$select->execute();
+$authors=$select->fetchAll(PDO::FETCH_ASSOC);
 $selectposts=$connection->prepare("SELECT * FROM posts WHERE id=?");
 $selectposts->bindValue(1,$id);
 $selectposts->execute();
@@ -102,7 +105,18 @@ $post=$selectposts->fetch(pdo::FETCH_ASSOC);
         <div class="post-container w-100 mx-auto">
             <div class="content bg-white">
                 <h4 class="title"><?=$post['title']?></h4>
-                <span class="date">نوشته شده توسط <?=$post['author'] ?></span>
+
+                <span class="date">نوشته شده توسط
+                    <?php
+               foreach ($authors as $authorss) {
+                   if ($post['author'] == $authorss['id']) {
+                       echo $authorss['username'];
+                       $aimage = $authorss['image'];
+                   }
+
+               } ?>
+                </span>
+<!--                <img src="--><?php //=$aimage?><!--"-->
                 <span class="author"><?=$post['date'] ?></span>
 
                 <div class="img w-100">
