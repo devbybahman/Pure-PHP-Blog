@@ -1,5 +1,5 @@
 <?php
-include "Database/PDO-Connection.php";
+require "Database/PDO-Connection.php";
 $selectposts=$connection->prepare("SELECT * FROM posts");
 $selectposts->execute();
 $posts=$selectposts->fetchAll(pdo::FETCH_ASSOC);
@@ -153,7 +153,7 @@ function limit_words($string)
                                 <?php echo limit_words($post['description']) ?>
                             </p>
 
-                            <a href="#" class="post__link">مشاهده پست</a>
+                            <a href="single.php?id=$post['id']" class="post__link">مشاهده پست</a>
                         </div>
 
                     </div>
