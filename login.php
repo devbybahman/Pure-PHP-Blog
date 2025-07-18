@@ -38,13 +38,13 @@ isset($_POST['password']) && $_POST['password'] !== ''
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="styles/css/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/css/style.css">
-    <link rel="stylesheet" href="styles/css/auth.css">
+    <link rel="stylesheet" href="/styles/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/css/style.css">
+    <link rel="stylesheet" href="/styles/css/auth.css">
     <!-- Css Reset -->
-    <link rel="stylesheet" href="styles/css/reset.css">
+    <link rel="stylesheet" href="/styles/css/reset.css">
     <!-- Vazir Font -->
-    <link rel="stylesheet" href="fonts/vazir.css">
+    <link rel="stylesheet" href="/fonts/vazir.css">
     <!-- Fontawsome CDN -->
 <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"-->
 <!--          integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="-->
@@ -87,7 +87,7 @@ isset($_POST['password']) && $_POST['password'] !== ''
     </div>
 </section>
 
-<script src="js/showPassword.js"></script>
-<script src="js/darkMode.js"></script>
+<script src="/js/showPassword.js"></script>
+<script src="/js/darkMode.js"></script>
 </body>
 </html>

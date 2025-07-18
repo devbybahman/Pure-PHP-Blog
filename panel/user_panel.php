@@ -23,7 +23,7 @@ if (!isset($_SESSION['user'])){
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="/panel/css/main.css">
 
     <title>codeyad blog</title>
 </head>
@@ -134,7 +134,7 @@ if (!isset($_SESSION['user'])){
                 <li x-data="dropdown" class="sidebar-item">
                     <div @click="toggle" class="sidebar-link">
                         <i class="me-2 bi bi-power"></i>
-                        <a href="logout.php"><span> خروج</span></a>
+                        <a href="/logout.php"><span> خروج</span></a>
                         <i class="ms-auto bi"></i>
                     </div>
                     <ul x-show="open" x-transition class="submenu"></ul>
@@ -165,9 +165,9 @@ if (!isset($_SESSION['user'])){
 <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
 <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 
-<script src="./js/charts/chart1.js"></script>
-<script src="./js/charts/chart2.js"></script>
-<script src="./js/alpineComponents.js"></script>
+<script src="/panel/js/charts/chart1.js"></script>
+<script src="/panel/js/charts/chart2.js"></script>
+<script src="/panel/js/alpineComponents.js"></script>
 </body>
 
 </html>

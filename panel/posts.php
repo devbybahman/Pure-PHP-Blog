@@ -2,7 +2,9 @@
 
 session_start();
 include "../Database/PDO-Connection.php";
-
+if ($_SESSION['role'] != 2) {
+    header('Location: ../login.php');
+}
 $select=$connection->prepare("SELECT * FROM posts");
 $select->execute();
 $posts=$select->fetchAll(PDO::FETCH_ASSOC);
