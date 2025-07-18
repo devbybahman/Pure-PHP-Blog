@@ -14,8 +14,11 @@ isset($_POST['password']) && $_POST['password'] !== ''
         $result->bindValue(1,$email);
         $result->bindValue(2,$password);
         $result->execute();
+
         if ($result->rowCount() >= 1) {
+            $role=$result->fetch(PDO::FETCH_ASSOC);
             $_SESSION['user'] = $_POST['email'];
+            $_SESSION['role'] = $role['role'];
             header('Location: ../panel/user_panel.php');
         }
         else{

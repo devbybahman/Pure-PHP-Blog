@@ -71,7 +71,7 @@ if (isset($_POST['sub'])) {
                             <a href="addpost.php"> افزودن مقاله </a>
                         </li>
                         <li class="submenu-item">
-                            <a href="../posts.php"> مقاله ها</a>
+                            <a href="posts.php"> مقاله ها</a>
                         </li>
                     </ul>
                 </li>
@@ -84,10 +84,10 @@ if (isset($_POST['sub'])) {
                     </div>
                     <ul x-show="open" x-transition class="submenu">
                         <li class="submenu-item active">
-                            <a href="#">افزون نویسنده</a>
+                            <a href="add%20author.php">افزون نویسنده</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="./products_index.html">لیست نویسندگان</a>
+                            <a href="authors.php">لیست نویسندگان</a>
                         </li>
 
                     </ul>

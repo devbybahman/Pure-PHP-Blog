@@ -38,48 +38,43 @@ if (isset($_SESSION['user'])){
         </div>
         <div class="mt-4">
             <ul class="list-unstyled">
-                <li class="sidebar-item active">
+                <li class="sidebar-item ">
                     <a class="sidebar-link" href="user_panel.php">
                         <i class="me-2 bi bi-grid-fill"></i>
                         <span>داشبورد</span>
                     </a>
                 </li>
 
-                <li x-data="dropdown" class="sidebar-item">
+                <li x-data="dropdown" class="sidebar-item ">
                     <div @click="toggle" class="sidebar-link">
                         <i class="me-2 bi bi-shop"></i>
-                        <a href="/panel/addpost.php"> <span>فروشگاه</span></a>
+                        <span>مقالات</span>
                         <i class="ms-auto bi bi-chevron-down"></i>
                     </div>
                     <ul x-show="open" x-transition class="submenu">
                         <li class="submenu-item">
-                            <a href="#">لیست فروشگاه ها</a>
+                            <a href="addpost.php"> افزودن مقاله </a>
                         </li>
                         <li class="submenu-item">
-                            <a href="#">ایجاد فروشگاه</a>
-                        </li>
-                        <li class="submenu-item">
-                            <a href="#">ویرایش فروشگاه</a>
+                            <a href="posts.php"> مقاله ها</a>
                         </li>
                     </ul>
                 </li>
 
-                <li x-data="dropdown" class="sidebar-item">
+                <li x-data="dropdown" class="sidebar-item active">
                     <div @click="toggle" class="sidebar-link">
                         <i class="me-2 bi bi-box-seam"></i>
-                        <span>محصولات</span>
+                        <span>نویسندگان</span>
                         <i class="ms-auto bi bi-chevron-down"></i>
                     </div>
                     <ul x-show="open" x-transition class="submenu">
-                        <li class="submenu-item">
-                            <a href="./products_index.html">لیست محصولات</a>
+                        <li class="submenu-item active">
+                            <a href="add%20author.php">افزون نویسنده</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="#">ایجاد محصول</a>
+                            <a href="authors.php">لیست نویسندگان</a>
                         </li>
-                        <li class="submenu-item">
-                            <a href="#">ویرایش محصول</a>
-                        </li>
+
                     </ul>
                 </li>
 
@@ -135,15 +130,13 @@ if (isset($_SESSION['user'])){
                     </ul>
                 </li>
 
-                <li  x-data="dropdown" class="sidebar-item">
-                    <div  @click="toggle" class="sidebar-link">
+                <li x-data="dropdown" class="sidebar-item">
+                    <div @click="toggle" class="sidebar-link">
                         <i class="me-2 bi bi-power"></i>
-                        <span>  <a class="text-decoration-none text-dark" href="../logout.php">خروج</a></span>
-                        <i class="ms-auto bi "></i>
+                        <span> خروج</span>
+                        <i class="ms-auto bi"></i>
                     </div>
-                    <ul x-show="open" x-transition class="submenu">
-
-                    </ul>
+                    <ul x-show="open" x-transition class="submenu"></ul>
                 </li>
             </ul>
         </div>

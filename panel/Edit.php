@@ -79,7 +79,7 @@ if (isset($_POST['sub'])){
                     </a>
                 </li>
 
-                <li x-data="dropdown" class="sidebar-item active">
+                <li x-data="dropdown" class="sidebar-item ">
                     <div @click="toggle" class="sidebar-link">
                         <i class="me-2 bi bi-shop"></i>
                         <span>مقالات</span>
@@ -95,22 +95,20 @@ if (isset($_POST['sub'])){
                     </ul>
                 </li>
 
-                <li x-data="dropdown" class="sidebar-item">
+                <li x-data="dropdown" class="sidebar-item active">
                     <div @click="toggle" class="sidebar-link">
                         <i class="me-2 bi bi-box-seam"></i>
-                        <span>محصولات</span>
+                        <span>نویسندگان</span>
                         <i class="ms-auto bi bi-chevron-down"></i>
                     </div>
                     <ul x-show="open" x-transition class="submenu">
-                        <li class="submenu-item">
-                            <a href="./products_index.html">لیست محصولات</a>
+                        <li class="submenu-item active">
+                            <a href="add%20author.php">افزون نویسنده</a>
                         </li>
                         <li class="submenu-item">
-                            <a href="#">ایجاد محصول</a>
+                            <a href="authors.php">لیست نویسندگان</a>
                         </li>
-                        <li class="submenu-item">
-                            <a href="#">ویرایش محصول</a>
-                        </li>
+
                     </ul>
                 </li>
 
