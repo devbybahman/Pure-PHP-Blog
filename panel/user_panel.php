@@ -1,7 +1,7 @@
 ﻿<?php
 session_start();
 include("../Database/PDO-Connection.php");
-if (isset($_SESSION['user'])){
+if (!isset($_SESSION['user'])){
     header('Location:../login.php');
     exit();
 
@@ -44,7 +44,7 @@ if (isset($_SESSION['user'])){
                         <span>داشبورد</span>
                     </a>
                 </li>
-
+<?php if ($_SESSION['role']==2){ ?>
                 <li x-data="dropdown" class="sidebar-item ">
                     <div @click="toggle" class="sidebar-link">
                         <i class="me-2 bi bi-shop"></i>
@@ -77,6 +77,7 @@ if (isset($_SESSION['user'])){
 
                     </ul>
                 </li>
+                <?php }?>
 
                 <li x-data="dropdown" class="sidebar-item">
                     <div @click="toggle" class="sidebar-link">
@@ -133,7 +134,7 @@ if (isset($_SESSION['user'])){
                 <li x-data="dropdown" class="sidebar-item">
                     <div @click="toggle" class="sidebar-link">
                         <i class="me-2 bi bi-power"></i>
-                        <span> خروج</span>
+                        <a href="logout.php"><span> خروج</span></a>
                         <i class="ms-auto bi"></i>
                     </div>
                     <ul x-show="open" x-transition class="submenu"></ul>

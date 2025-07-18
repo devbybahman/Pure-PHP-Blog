@@ -19,7 +19,8 @@ isset($_POST['password']) && $_POST['password'] !== ''
             $role=$result->fetch(PDO::FETCH_ASSOC);
             $_SESSION['user'] = $_POST['email'];
             $_SESSION['role'] = $role['role'];
-            header('Location: ../panel/user_panel.php');
+            header('Location: /panel/user_panel.php');
+            exit();
         }
         else{
             $error="ایمیل یا رمز عبور اشتباه است";
